@@ -1,0 +1,67 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    min-height: 100vh;
+    background-image: linear-gradient(to right, #00bf8f, #FEAC5E, #001510);
+}
+
+.accardion-container {
+    width: 400px;
+    height: auto;
+}
+
+.accardion-container button {
+    width: 100%;
+    height: 50px;
+    text-align: left;
+    padding: 10px;
+    border-bottom: 1px solid rgb(170, 167, 167) !important;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    border-radius: 10px;
+    margin: 5px 0px;
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    font-weight: bold;
+}
+
+.accardion-container button::after {
+    content: "+";
+    float: right;
+    transition: 0.5s all;
+    font-size: 20px;
+}
+
+.accardion-container button.show::after {
+    transform: rotate(45deg);
+}
+
+.accardion-container div {
+    max-height: 0;
+    overflow: hidden;
+    transition: 0.5s max-height;
+}
+
+.accardion-container button.show+div {
+    max-height: 1000px !important;
+}
+
+.accardion-container div p {
+    padding: 10px;
+}
+
+@media screen and (max-width:600px) {
+    .accardion-container {
+        width: 320px;
+    }
+}
